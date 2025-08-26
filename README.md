@@ -4,7 +4,7 @@ A fast and lightweight **Go tool** to extract links (including `.js` files) from
 It’s useful for recon, bug bounty hunting, or general link scraping.  
 
 ```
-       __  ____      __
+           __  ____        __
  ___ ____ / /_/ __/__  ___/ /__
  / _  / -_) __/ _// _  / _  (_-<
  \_, /\__/\__/___/_//_/\_,_/___/
