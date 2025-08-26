@@ -21,7 +21,6 @@ It’s useful for recon, bug bounty hunting, or general link scraping.
   - Only `.js` files (`-j`)  
   - Excludes junk/media files (`.css`, `.png`, `.pdf`, etc.)  
 - Outputs results to a file (default: `extracted.txt`).  
-- Uses realistic headers (`User-Agent`, `Accept`) to avoid blocks.  
 
 ---
 
