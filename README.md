@@ -1,4 +1,4 @@
-# 🔗 GETENDS
+# 🔗 getends
 
 A fast and lightweight **Go tool** to extract links (including `.js` files) from web pages with filtering, error handling, and DNS failover.  
 It’s useful for recon, bug bounty hunting, or general link scraping.  
@@ -21,6 +21,7 @@ It’s useful for recon, bug bounty hunting, or general link scraping.
   - Only `.js` files (`-j`)  
   - Excludes junk/media files (`.css`, `.png`, `.pdf`, etc.)  
 - Outputs results to a file (default: `extracted.txt`).  
+- Uses realistic headers (`User-Agent`, `Accept`) to avoid blocks.  
 
 ---
 
@@ -28,9 +29,9 @@ It’s useful for recon, bug bounty hunting, or general link scraping.
 Make sure you have [Go installed](https://go.dev/dl/).  
 
 ```bash
-git clone https://github.com/yourusername/links-extractor.git
-cd links-extractor
-go build -o links-extractor
+git clone https://github.com/1mranHUdaA/getends.git
+cd getends
+go build -o getends getends.go
 ```
 
 ---
@@ -39,32 +40,32 @@ go build -o links-extractor
 
 ### Single URL
 ```bash
-./links-extractor -u https://example.com
+./getends -u https://example.com
 ```
 
 ### Multiple URLs from a file
 ```bash
-./links-extractor -l urls.txt
+./getends -l urls.txt
 ```
 
 ### Output to a custom file
 ```bash
-./links-extractor -u https://example.com -o results.txt
+./getends -u https://example.com -o results.txt
 ```
 
 ### Extract only same-domain links
 ```bash
-./links-extractor -u https://example.com -d
+./getends -u https://example.com -d
 ```
 
 ### Extract only `.js` files
 ```bash
-./links-extractor -u https://example.com -j
+./getends -u https://example.com -j
 ```
 
 ### Skip sending `Accept` header
 ```bash
-./links-extractor -u https://example.com --no-accept
+./getends -u https://example.com --no-accept
 ```
 
 ---
@@ -99,7 +100,7 @@ When extracting from `https://example.com`:
 
 ```bash
 # Crawl multiple URLs and collect JS files only
-./links-extractor -l targets.txt -j -o js-links.txt
+./getends -l targets.txt -j -o js-links.txt
 
 # Combine with tools like httpx or gau
 cat js-links.txt | httpx -mc 200 -o live-js.txt
